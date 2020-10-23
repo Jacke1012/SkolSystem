@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using SkolSystem.Forms;
 using SkolSystem.Klasser;
 
 namespace SkolSystem
@@ -38,6 +30,7 @@ namespace SkolSystem
 
         private void cmbKlasser_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //Fyller betyg och stage med info
             tbxKursStatus.Text = ((Kurs)cmbKlasser.SelectedItem).resultat.stage.ToString();
             tbxBetyg.Text = ((Kurs)cmbKlasser.SelectedItem).resultat.betygBokstav.ToString();
             tbxKursInfo.Text = ((Kurs)cmbKlasser.SelectedItem).kursInfo;

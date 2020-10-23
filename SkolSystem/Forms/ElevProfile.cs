@@ -1,16 +1,12 @@
 ﻿using SkolSystem.Klasser;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SkolSystem.Forms
 {
+    /// <summary>
+    /// Form componenten som öppnas när ett namn dubbelklickas i lära läget(inloggad som lärare)
+    /// </summary>
     public partial class ElevProfile : Form
     {
         ElevKonto elevKonto;
@@ -37,6 +33,7 @@ namespace SkolSystem.Forms
 
         private void lbxKlasser_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //Fyller betyg och stage med info
             cmbStatus.SelectedIndex = (int)((Kurs)lbxKlasser.SelectedItem).resultat.stage;
             cmbBetyg.SelectedIndex = (int)((Kurs)lbxKlasser.SelectedItem).resultat.betygBokstav;
         }
