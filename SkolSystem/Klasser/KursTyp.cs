@@ -11,5 +11,23 @@ namespace SkolSystem.Klasser
         public string kursNamn;
         public string kursInfo;
         public int poäng;
+
+        public KursTyp()
+        {
+        }
+
+
+
+        public KursTyp(string kursNamn, string kursInfo, int poäng)
+        {
+            this.kursNamn = kursNamn;
+            this.kursInfo = kursInfo;
+            this.poäng = poäng;
+        }
+
+        public override string ToString()
+        {
+            return kursNamn;
+        }
     }
 }

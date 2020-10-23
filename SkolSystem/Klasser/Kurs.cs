@@ -9,14 +9,25 @@ namespace SkolSystem.Klasser
     public class Kurs
     {
         public KursTyp kurstyp;
-        protected Resultat resultat;
+        public Resultat resultat;
         public LäraKonto lärare;
         public Klass klass;
+        public string kursInfo => $"{kurstyp.kursNamn}: {kurstyp.kursInfo}";
 
         public Kurs(KursTyp kurstyp, LäraKonto lärare)
         {
             this.kurstyp = kurstyp;
             this.lärare = lärare;
+            resultat = new Resultat();
+        }
+
+        public Kurs()
+        {
+        }
+
+        public override string ToString()
+        {
+            return $"{kurstyp}";
         }
     }
 }

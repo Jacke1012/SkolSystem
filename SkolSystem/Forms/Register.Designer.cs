@@ -35,6 +35,8 @@
             this.tbxPersonNummber = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.BtnRegeriser = new System.Windows.Forms.Button();
+            this.cmbTyp = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -94,7 +96,7 @@
             // BtnRegeriser
             // 
             this.BtnRegeriser.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnRegeriser.Location = new System.Drawing.Point(217, 301);
+            this.BtnRegeriser.Location = new System.Drawing.Point(227, 341);
             this.BtnRegeriser.Name = "BtnRegeriser";
             this.BtnRegeriser.Size = new System.Drawing.Size(156, 66);
             this.BtnRegeriser.TabIndex = 6;
@@ -102,11 +104,34 @@
             this.BtnRegeriser.UseVisualStyleBackColor = true;
             this.BtnRegeriser.Click += new System.EventHandler(this.BtnRegeriser_Click);
             // 
+            // cmbTyp
+            // 
+            this.cmbTyp.FormattingEnabled = true;
+            this.cmbTyp.Items.AddRange(new object[] {
+            "Lärare",
+            "Elev"});
+            this.cmbTyp.Location = new System.Drawing.Point(260, 283);
+            this.cmbTyp.Name = "cmbTyp";
+            this.cmbTyp.Size = new System.Drawing.Size(111, 21);
+            this.cmbTyp.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(176, 279);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 25);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Typ";
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1154, 540);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.cmbTyp);
             this.Controls.Add(this.BtnRegeriser);
             this.Controls.Add(this.tbxPersonNummber);
             this.Controls.Add(this.label3);
@@ -130,5 +155,7 @@
         private System.Windows.Forms.TextBox tbxPersonNummber;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button BtnRegeriser;
+        private System.Windows.Forms.ComboBox cmbTyp;
+        private System.Windows.Forms.Label label4;
     }
 }

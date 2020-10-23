@@ -41,6 +41,7 @@
             this.BtnLogin.TabIndex = 0;
             this.BtnLogin.Text = "Logga in";
             this.BtnLogin.UseVisualStyleBackColor = true;
+            this.BtnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
             // 
             // BtnRegister
             // 
@@ -62,6 +63,8 @@
             this.Controls.Add(this.BtnLogin);
             this.Name = "Menu";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Menu_FormClosing);
+            this.Load += new System.EventHandler(this.Menu_Load);
             this.ResumeLayout(false);
 
         }
