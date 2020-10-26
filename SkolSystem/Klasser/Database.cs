@@ -43,9 +43,20 @@ namespace SkolSystem.Klasser
                 }
             }
 
-            
 
-            LoadKursTyper();
+
+            AddKursTyper();
+        }
+
+        public static void AddKursTyper()//Istället för sql
+        {
+            data.kursTyper = new List<KursTyp>();
+            data.kursTyper.Add(new KursTyp("Matte", "Leker med siffror", 100));
+            data.kursTyper.Add(new KursTyp("Fysik", "Kraft", 150));
+            data.kursTyper.Add(new KursTyp("Programmering", "01010110001 Null exeption", 100));
+            data.kursTyper.Add(new KursTyp("Svenska", "Tråkigt", 100));
+            data.kursTyper.Add(new KursTyp("Engelska", "Very Nice", 100));
+            data.kursTyper.Add(new KursTyp("Relgion", "Ame", 50));
         }
 
         public static void LoadKursTyper()

@@ -56,7 +56,7 @@ namespace SkolSystem
 
         private void cmbKlasser_SelectedIndexChanged(object sender, EventArgs e)
         {
-            tbxKursInfo.Text = ((Kurs)cmbKlasser.SelectedItem).kursInfo;
+            tbxKursInfo.Text = ((Klass)cmbKlasser.SelectedItem).kursInfo;
         }
     }
 }
