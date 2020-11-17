@@ -10,19 +10,44 @@ namespace SkolSystem.Klasser
 {
     public class SqlLoader
     {
-        private static string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|SkolSystem.mdf; Integrated Security=True";
-        public static void SendQuery(string query)
+        public static string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|SkolSystem.mdf; Integrated Security=True";
+
+        public static List<object[]> SendQuery(string query, int numOfCoulombs)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            List<object[]> tempList = new List<object[]>();
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                connection.Open();
-                using(SqlCommand cmd = new SqlCommand(query, connection))
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    cmd.CommandType = CommandType.Text;
-                    cmd.ExecuteNonQuery();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        object[] temp = new object[numOfCoulombs];
+                        for (int i = 0; i < numOfCoulombs; i++)
+                        {
+                            temp[i] = reader.GetValue(0);
+                        }
+                        tempList.Add(temp);
+                    }
                 }
             }
+            return tempList;
         }
+
+
+        //public static void SendQuery(string query)
+        //{
+        //    using (SqlConnection connection = new SqlConnection(connectionString))
+        //    {
+        //        connection.Open();
+        //        using(SqlCommand cmd = new SqlCommand(query, connection))
+        //        {
+        //            cmd.CommandType = CommandType.Text;
+        //            cmd.ExecuteNonQuery();
+        //        }
+        //    }
+        //}
 
         public static List<object[]> Fetch(string query)
         {
