@@ -53,6 +53,7 @@
             this.tbxPassword.Name = "tbxPassword";
             this.tbxPassword.Size = new System.Drawing.Size(113, 30);
             this.tbxPassword.TabIndex = 12;
+            this.tbxPassword.Text = "test";
             // 
             // label2
             // 
@@ -71,6 +72,7 @@
             this.tbxNamn.Name = "tbxNamn";
             this.tbxNamn.Size = new System.Drawing.Size(113, 30);
             this.tbxNamn.TabIndex = 10;
+            this.tbxNamn.Text = "Jacob";
             // 
             // label1
             // 

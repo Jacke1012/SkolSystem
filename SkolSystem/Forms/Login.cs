@@ -22,19 +22,6 @@ namespace SkolSystem.Forms
         private bool AccountExist(string kontoNamn)
         {
             int temp = -1;
-            //using (SqlConnection conn = new SqlConnection(SqlLoader.connectionString))
-            //{
-            //    conn.Open();
-            //    string query = $"SELECT COUNT(Namn) FROM Konton WHERE Namn = '{kontoNamn}'";
-            //    using (SqlCommand cmd = new SqlCommand(query, conn))
-            //    {
-            //        SqlDataReader reader = cmd.ExecuteReader();
-            //        while (reader.Read())
-            //        {
-            //            temp = reader.GetInt32(0);
-            //        }
-            //    }
-            //}
 
             temp = (int)SqlLoader.SendQuery($"SELECT COUNT(Namn) FROM Konton WHERE Namn='{kontoNamn}'", 1)[0][0];
 
@@ -67,7 +54,7 @@ namespace SkolSystem.Forms
             {
                 if (CheckPassword(tbxNamn.Text, tbxPassword.Text))
                 {
-                    string test = (string)SqlLoader.SendQuery($"SELECT KontoTyp FROM Konton WHERE Namn = {tbxNamn.Text}",1)[0][0];
+                    string test = (string)SqlLoader.SendQuery($"SELECT KontoTyper.KontoTyp FROM Konton INNER JOIN KontoTyper ON (Konton.KontoTyp = KontoTyper.Id) WHERE Namn='{tbxNamn.Text}'",1)[0][0];
 
                 }
             }
